@@ -1,0 +1,3 @@
+version=3
+opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/golang-pty-$1\.tar\.gz/ \
+  https://github.com/kr/pty/tags .*/v?(\d\S*)\.tar\.gz
