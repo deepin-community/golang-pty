@@ -1,15 +1,29 @@
-Source: template-repository
-Section: unknown
+Source: golang-pty
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Tianon Gravi <tianon@debian.org>,
+           Anthony Fok <foka@debian.org>,
+           Tim Potter <tpot@hpe.com>,
+           Michael Stapelberg <stapelberg@debian.org>
+Section: devel
+Testsuite: autopkgtest-pkg-go
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13),
+               dh-golang,
+               golang-any
+Standards-Version: 4.6.1
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-pty
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-pty.git
+Homepage: https://github.com/kr/pty
+XS-Go-Import-Path: github.com/kr/pty
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: golang-github-kr-pty-dev
+Architecture: all
+Depends: ${misc:Depends}
+Breaks: golang-pty-dev (<< 0.0~git20151007.0.f7ee69f-1~)
+Provides: golang-pty-dev
+Replaces: golang-pty-dev (<< 0.0~git20151007.0.f7ee69f-1~)
+Multi-Arch: foreign
+Description: Go package for using unix pseudo-terminals
+ Pty is a Go package for using unix pseudo-terminals.
+ .
+ This package contains the source.
